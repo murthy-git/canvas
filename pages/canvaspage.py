@@ -1,8 +1,8 @@
-from locators import CanvasPageLocators
+from locators.locators import CanvasPageLocators
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-class CanvasPageActions:
+class CanvasPage:
     def __init__(self, driver):
         self.driver = driver
         self.canvas = driver.find_element(*CanvasPageLocators.canvas)
