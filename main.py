@@ -2,6 +2,7 @@ from selenium.webdriver import Chrome
 from settings import CHROME_DRIVER_PATH
 from pages.canvaspage import CanvasPage
 from utils.consts import Constants
+import time
 
 
 def perform_task():
@@ -20,6 +21,8 @@ if __name__ == '__main__':
     driver.fullscreen_window()
     cp = CanvasPage(driver)
     perform_task()
+    time.sleep(3)
+    driver.quit()
 
 
 

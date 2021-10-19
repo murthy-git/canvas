@@ -61,7 +61,7 @@ class CanvasPage:
         action.move_to_element_with_offset(self.canvas, end_point[0], start_point[1])
         action.move_to_element_with_offset(self.canvas, *end_point)
         action.move_to_element_with_offset(self.canvas, start_point[0], end_point[1])
-        action.move_to_element_with_offset(self.canvas, *start_point)
+        action.move_to_element_with_offset(self.canvas, start_point[0], start_point[1]-5)
         action.release()
         action.perform()
 
