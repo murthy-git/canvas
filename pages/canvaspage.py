@@ -7,6 +7,14 @@ class CanvasPage:
         self.driver = driver
         self.canvas = driver.find_element(*CanvasPageLocators.canvas)
 
+    def increase_slider(self):
+        slider = self.driver.find_element(*CanvasPageLocators.slider)
+        action = ActionChains(self.driver)
+        action.move_to_element(slider).click_and_hold()
+        action.move_by_offset(10, 0)
+        action.release()
+        action.perform()
+
     def click_line(self):
         self.driver.find_element(*CanvasPageLocators.line).click()
 
@@ -35,6 +43,7 @@ class CanvasPage:
         action.perform()
 
     def erase_line(self, start_point, end_point):
+        self.increase_slider()
         self.click_eraser()
         action = ActionChains(self.driver)
         action.move_to_element_with_offset(self.canvas, *start_point)
@@ -44,6 +53,7 @@ class CanvasPage:
         action.perform()
 
     def erase_rectangle(self, start_point, end_point):
+        self.increase_slider()
         self.click_eraser()
         action = ActionChains(self.driver)
         action.move_to_element_with_offset(self.canvas, *start_point)

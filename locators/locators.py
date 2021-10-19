@@ -6,3 +6,4 @@ class CanvasPageLocators:
     eraser = (By.CLASS_NAME, 'eraser')
     canvas = (By.ID, 'imageTemp')
     rectangle = (By.CLASS_NAME, 'rectangle')
+    slider = (By.CLASS_NAME, 'ui-slider-handle')
